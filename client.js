@@ -10,7 +10,7 @@ const connect = function() {
 
   conn.on('connect', () => {
     console.log("Successfully connected to game server");
-    conn.write("Name: NVV");;
+    conn.write("Say: Sup");
   });
 
   // hard codded snake movements

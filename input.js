@@ -1,27 +1,29 @@
+const { CTRLC, UP_KEY, DOWN_KEY, RIGHT_KEY, LEFT_KEY } = require('./constants');
+
 // Stores the active TCP connection object.
 let connection;
 
 /**
  * Setup User Interface 
- * Specifically, so that we can handle user input via stdin W U+0077 A U+0061 S U+0073 D U+0064
+ * Specifically, so that we can handle user input via stdin
  */
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.on("data", function handleUserInput(key) {
-    if (key === '\u0003') {
+    if (key === CTRLC) {
       process.exit();
     }
-    if (key === '\u0077') {
+    if (key === UP_KEY) {
       conn.write("Move: up");
     }
-    if (key === '\u0061') {
+    if (key === LEFT_KEY) {
       conn.write("Move: left");
     }
-    if (key === '\u0073') {
+    if (key === DOWN_KEY) {
       conn.write("Move: down");
     }
-    if (key === '\u0064') {
+    if (key === RIGHT_KEY) {
       conn.write("Move: right");
     }
   });

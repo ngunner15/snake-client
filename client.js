@@ -14,11 +14,11 @@ const connect = function() {
   });
 
   // hard codded snake movements
-  conn.on('connect', () => {
-    setTimeout(() => {conn.write("Move: up");}, 500)
-    setTimeout(() => {conn.write("Move: left");}, 1500)
-    setTimeout(() => {conn.write("Move: up");}, 2500)
-  })
+  // conn.on('connect', () => {
+  //   setTimeout(() => {conn.write("Move: up");}, 500)
+  //   setTimeout(() => {conn.write("Move: left");}, 1500)
+  //   setTimeout(() => {conn.write("Move: up");}, 2500)
+  // })
   
 
   conn.on('data', (data) => {

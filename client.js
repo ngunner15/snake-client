@@ -13,6 +13,7 @@ const connect = function() {
     conn.write("Name: NVV");;
   });
 
+  // hard codded snake movements
   conn.on('connect', () => {
     setTimeout(() => {conn.write("Move: up");}, 500)
     setTimeout(() => {conn.write("Move: left");}, 1500)
